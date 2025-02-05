@@ -1,0 +1,78 @@
+<div class="conteiner">
+    <h1>Fundamentos de Angular</h1>
+    <div>
+      <h4>Interpolación</h4>
+      <p>Nombre del alumno: {{nombre}}</p>
+      <p>Anios de servicio: {{aniosServicio}}</p>
+      <p>Correo: {{email}}</p>
+      <p>Uno + Uno = {{1+1}}</p>
+      <p>{{estaActivo()}}</p>
+      <p>Total de alumnos: {{sumarAlumnos()}}</p>
+    </div>
+  
+    <div>
+       <h4>Sentencia if</h4>
+       <p>Años de servicio:</p>
+       @if(aniosServicio >= 20){
+        <p>Tiene mucha antiguedad</p>
+       } @else {
+        <p>no tiene mucha antiguedad</p>
+       }
+    </div>
+  
+    <div>
+      <p></p>
+      <div>
+        <h4>Sentencia for</h4>
+        <h4>Listado de productos</h4>
+        <table>
+          @for(producto of productos; track producto.id){
+            <tr>
+              <td>{{producto.id}}</td>
+              <td>{{producto.descripcion}}</td>
+              <td>{{producto.precio}}</td>
+            </tr>
+          }
+        </table>
+      </div>
+    </div>
+    <div>
+      <h4>Sentencia switch</h4>
+      @switch (generarNumero()) {
+        @case (1) {
+          <p>Uno</p>
+        }
+        @case (2) {
+          <p>Dos</p>
+        }
+        @case (3) {
+          <p>Tres</p>
+        }
+        @default {
+          <p>Es un numero diferente</p>
+        }
+      }
+    </div>
+  
+    <div>
+      <h4>Control de eventos</h4>
+      <p>{{contador}}</p>
+      <button type="button" class="btn btn-primary" (click)="incrementarContador()">Sumar 1</button>
+      <button type="button" class="btn btn-danger" (click)="decrementarContador()">Restar 1</button>
+    </div>
+  
+  
+    <div>
+      <p></p>
+      <div>
+        <h4>Property Binding</h4>
+        <button type="button" [disabled]="desactivarBoton">
+          Guardar
+        </button>
+        <p></p>
+        <button type="button" (click)="cambiarValor()">
+          Habilitar boton
+        </button>
+      </div>
+    </div>
+  </div>

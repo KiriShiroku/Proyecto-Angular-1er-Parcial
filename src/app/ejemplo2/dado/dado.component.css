@@ -1,0 +1,12 @@
+.formaDado{
+	width: 5rem;
+	height: 5rem;
+	font-size: 3rem;
+	background-color: black;
+	color:aliceblue;
+	border-radius: 1rem;
+	display: inline-flex;
+	JUSTIFY-CONTENT: CENTER;
+	align-items: center;
+	margin: 10px;
+}

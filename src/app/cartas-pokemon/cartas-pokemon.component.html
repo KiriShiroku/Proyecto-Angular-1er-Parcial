@@ -1,0 +1,61 @@
+<div style="margin: 20px;">
+  <h1>Catálogo de Cartas Pokémon</h1>
+  @if (cartas.length > 0) {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio (USD)</th>
+          <th>Seleccionar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (carta of cartas; track carta.id) {
+          <tr>
+            <td>{{carta.id}}</td>
+            <td>{{carta.nombre}}</td>
+            <td>{{carta.precio}}</td>
+            <td>
+              <button type="button" class="btn btn-warning" (click)="seleccionarCarta(carta)">Seleccionar</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="eliminarCarta(carta.id)">Eliminar</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  } @else {
+    <h3>NO HAY CARTAS DISPONIBLES</h3>
+  }
+  <div>
+    <form [formGroup]="formCarta">
+      <p>
+        ID: <input type="number" formControlName="id" />
+        @if (formCarta.get('id')?.invalid && formCarta.get('id')?.touched) {
+          <small class="text-danger">El ID es requerido y debe ser mayor a 0.</small>
+        }
+      </p>
+      <p>
+        Nombre: <input type="text" formControlName="nombre" />
+        @if (formCarta.get('nombre')?.invalid && formCarta.get('nombre')?.touched) {
+          <small class="text-danger">El nombre es requerido y debe tener al menos 3 caracteres.</small>
+        }
+      </p>
+      <p>
+        Precio: <input type="number" formControlName="precio" />
+        @if (formCarta.get('precio')?.invalid && formCarta.get('precio')?.touched) {
+          <small class="text-danger">El precio es requerido y debe ser mayor a 0.</small>
+        }
+      </p>
+      <p>
+        <button type="button" class="btn btn-primary" (click)="agregarCarta()">Agregar</button>
+      </p>
+      <p>
+        <button type="button" class="btn btn-success" (click)="modificarCarta()">Modificar</button>
+      </p>
+    </form>
+  </div>
+</div>

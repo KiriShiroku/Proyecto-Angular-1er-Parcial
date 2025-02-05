@@ -1,0 +1,23 @@
+<div style="margin: 20px;">
+    <h1>Lista tareas(Ejemplos de Forms Reactivos)</h1> 
+    
+    <p>
+      Tarea : <input type="text" [formControl]="tarea" />
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary" (click)="agregarTarea()">Agregar</button>
+    </p>
+    <br/><br/>
+  
+    <ol>
+      @for(tar of listaTareas; track $index){
+        <li>
+          {{tar}} <a (click)="borrarTarea($index)" href="#">Borrar?</a>
+        </li>
+      }
+    </ol>
+  
+    <p>
+      <button type="button" class="btn btn-danger" (click)="borrarTareas()">Eliminar todas las tareas</button>
+    </p>
+  </div>
