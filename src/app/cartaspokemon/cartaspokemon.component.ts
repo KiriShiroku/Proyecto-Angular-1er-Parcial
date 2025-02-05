@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-pokemon-catalog',
-  imports: [FormsModule, ReactiveFormsModule], // Asegúrate de importar ReactiveFormsModule
-  templateUrl: './cartas-pokemon.component.html'
+  selector: 'app-cartaspokemon',
+  imports: [FormsModule,ReactiveFormsModule],
+  templateUrl: './cartaspokemon.component.html',
 })
-export class PokemonCatalogComponent {
+export class CartaspokemonComponent {
 
   // FormGroup para validaciones
   formCarta = new FormGroup({
