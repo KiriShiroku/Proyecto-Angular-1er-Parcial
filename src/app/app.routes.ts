@@ -14,5 +14,5 @@ export const routes: Routes = [
     {path:'ejemplo4',component:Ejemplo4Component},
     {path:'ejemplo5',component:Ejemplo5Component},
     {path:'cartaspokemon',component:CartaspokemonComponent},
-    {path:'',redirectTo:'/cartas-pokemon',pathMatch:'full'}
+    {path:'',redirectTo:'/cartaspokemon',pathMatch:'full'}
 ];
